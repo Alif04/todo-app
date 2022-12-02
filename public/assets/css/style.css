@@ -25,9 +25,7 @@ body::-webkit-scrollbar{
   color: black !important;
 }
 
-.list-group-item a:hover{
-    color: black !important;
-}
+
 
 #sidebar-wrapper .sidebar-heading {
   padding: 0.875rem 1.25rem;

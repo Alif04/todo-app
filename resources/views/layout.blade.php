@@ -44,7 +44,7 @@
           <div
             class="container list-group-item list-group-item-action list-group-item-light p-3"style="background-color: #5e4141;"
           >
-             <a href="/showtodo" class="text-white"><i class="fa-regular fa-clipboard mx-3 "></i>Dashboard</a>
+             <a href="/showtodo" class="text-white"><i class="fa-regular fa-clipboard mx-3 "></i>Todo List</a>
           </div>
         </div>
       </div>
