@@ -52,7 +52,7 @@
                     {{$a['title']}}
                 </p>
             
-                <p> {{ $a['description'] }} </p>
+                <p class="text-truncate"> {{ $a['description'] }} </p>
                 {{-- konsep ternanry : if column status baris ini isinya 1 bakal memunculkan teks 'Complated' selain dari itu akan menampilkan teks 'On-Proccess'--}}
                 <p class="text-muted">{{$a['status'] == 1 ? 'Complated' : 'On Proccess'}} 
                     {{-- Carbon itu package laravel untuk mengelola yang berhubungan dengan date. Tadinya value column date di database berbentuk format 2022-11-22 nah jadi itu diubah menjadi format 22 November 2022  --}}
@@ -75,7 +75,7 @@
                 </form>
                 @endif
                   <li><a class="dropdown-item" href="/edit/{{ $a->id }}"><i class="fa-solid fa-pen-to-square mx-2"></i>Edit</a></li>
-                  <li><a class="dropdown-item" href="/delete/{{ $a->id }}"><i class="fa-solid fa-trash mx-2"></i>Delete</a></li>
+                  <li><a class="dropdown-item" onclick="confirmDelete()" href="/delete/{{ $a->id}}"><i class="fa-solid fa-trash mx-2"></i>Delete</a></li>
                 </ul>
             </div>
               </div>
@@ -83,5 +83,5 @@
         </div>
         @endforeach
     </div>
-</div>
+</div>  
 @endsection 

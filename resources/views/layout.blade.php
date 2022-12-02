@@ -44,6 +44,7 @@
           <div
             class="container list-group-item list-group-item-action list-group-item-light p-3"style="background-color: #5e4141;"
           >
+  
              <a href="/showtodo" class="text-white"><i class="fa-regular fa-clipboard mx-3 "></i>Todo List</a>
           </div>
         </div>
@@ -64,7 +65,7 @@
                 {{Auth::user()->username}}
               </button>
               <ul class="dropdown-menu">
-                <li>  <a class="dropdown-item" href="/logout"><i class="fas fa-solid fa-arrow-right-from-bracket" style="color: black;"></i> Logout</a></li>
+                <li>  <a class="dropdown-item" onclick="confirmLogout()"><i class="fas fa-solid fa-arrow-right-from-bracket" style="color: black;"></i> Logout</a></li>
                 <li > <a class="dropdown-item"  href="#"><i class=" fa-regular fa-user px-1"></i>Profile</a></li>
               </ul>
             </div>
@@ -77,6 +78,25 @@
         </div>
       </div>
     </div>
+    <script>
+    function confirmLogout(){
+    Swal.fire({
+      icon: 'question',
+      title: 'Oops...',
+      text: 'Are You Sure?',
+      showDenyButton: true,
+      confirmButtonText: 'Sure',
+      denyButtonText: `Cancel`,
+    }).then((result) => {
+      /* Read more about isConfirmed, isDenied below */
+      if (result.isConfirmed) {
+        window.location.href = "/logout";
+      } else if (result.isDenied) {
+        Swal.fire('Anda tidak logout!', '', 'info')
+      }
+    })
+  }
+  </script>
     <script src="{{url('assets/js/script.js')}}"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
   </body>
